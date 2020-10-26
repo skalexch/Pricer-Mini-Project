@@ -1,0 +1,197 @@
+ 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <title>Bond Pricing tool</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Libraries CSS Files -->
+  <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+
+
+
+
+
+  
+</head>
+
+ 
+
+
+
+<body>
+
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="{{ url_for('static', filename='img/back3.jpg') }}" alt=""></div>
+            <div class="carousel-container">
+             
+                <div class="auth-wrapper">
+  <div class="auth-content">
+    <div class="card">
+       <form  action="{{ url_for('bonds') }}" method="POST">
+      
+        
+          <div class="card-body">
+           
+            
+
+        <div class="banner">
+          <h1 style="font-family:verdana">Outil de calcul obligataire</h1>
+        </div>
+        <br/>
+        <p>
+
+          <div class="item">
+            <p>Frequence des coupons</p>
+            <select  id="frequency"  name="frequency" class="selectpicker form-control">
+              <option selected value="" disabled selected></option>
+              <option value="Annuel" selected>Annuel</option>
+              <option value="Semestriel">Semestriel</option>
+              <option value="Trimestriel">Trimestriel</option>
+            </select>
+          </div>
+
+        </p>
+        <br/>
+         <div class="colums">
+
+          <div class="item">
+            <label for="fname">Emission<span>*</span></label>
+            <input type="date" id="emission" name="emission"
+            value="2020-10-22"
+            min="2020-10-19" max="2222-12-31" required></div>
+
+            
+          <div class="item">
+            <label for="fname">Maturité<span>*</span></label>
+            <input type="date" id="maturity" name="maturity"
+            value="2020-10-22"
+            min="2020-10-19" max="2222-12-31" required></div>
+
+
+
+          <div class="item">
+            <label for="lname"> Face value<span>*</span></label>
+            <input id="FV" type="float" name="FV" required/>
+          </div>
+          <div class="item">
+            <label for="org">Taux de coupon<span>*</span></label>
+            <input id="org" type="float"   name="coupon_rate" required/>
+          </div>
+
+
+
+          <div class="item">
+            <label for="fname">Prix de l'obligation<span></span></label>
+            <input id="fname" type="float" name="price" value="0"/>
+          </div>
+
+          
+          <div class="item">
+            <label for="fname">Coupon couru<span></span></label>
+            <input id="fname" type="float" name="cc" value="0"/>
+          </div>
+
+
+          
+          <div class="item">
+            <label for="fname">Prix clean<span></span></label>
+            <input id="fname" type="float" name="clean" value="0"/>
+          </div>
+
+
+          <div class="item">
+            <label for="fname">Duration<span></span></label>
+            <input id="fname" type="float" name="duration" value="0" />
+          </div>
+
+          <div class="item">
+            <label for="fname">Taux de rendement actuariel<span></span></label>
+            <input id="fname" type="float" name="rate" value="0"/>
+          </div>
+
+
+          <div class="item">
+            <p>Quoi déterminer?</p>
+            <select  id="opt"  name="opt" class="selectpicker form-control">
+              <option value="Prix" selected>Prix et duration de l'obligation</option>
+              <option value="Taux de rendement" >Taux de rendement actuariel</option>
+            </select>
+          </div>
+
+
+    <!--      <div class="item">
+            <label for="fname">Variation du prix<span></span></label>
+            <input id="fname" type="float" name="var_price" value="0" />
+          </div>
+
+          <div class="item">
+            <label for="fname">Variation du taux<span></span></label>
+            <input id="fname" type="float" name="var_rate" value="0" />
+          </div>
+-->
+
+
+
+      <div class="btn-block" style="margin-left: 200px;">
+          <button type="submit" name="action1" value="Do Something" href="/">Submit</button>
+
+  
+        </div>  
+
+        </div>
+
+
+
+
+
+          </div>
+        
+    
+      </form>
+    </div>
+  </div>
+
+</div>
+
+              </div>
+        
+          </div>
+
+         
+
+  </div>
+
+  
+  </section><!-- #intro -->
+
+ </body>
+ </html>

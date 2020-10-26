@@ -1,0 +1,84 @@
+{% extends "layout.jinja2" %}
+{% block content %}
+<div class="card">
+  <img src="{{ url_for('static', filename='img/logo2.png') }}" class="logo" />
+  <h1 class="site-title">Pricing Tool</h1>
+  <p class="subtitle">Calculate Forward Rate and Backtest, Calculate SWAP, Bonds (<a href="https://github.com/toddbirchard/plotlydash-flask-tutorial">Github</a>).</p>
+  
+
+  <a href="/calc/" class="dash-link">
+    <span>Calculate Forward Rate</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+  <br>
+    <div class="box" style="border: thin solid black">
+  <h6>Upload file for forward rate backtesting</h6>
+    <form method="POST" action="" enctype="multipart/form-data">
+
+    <p>Buy or Sell? (Point de vue client)</p>
+      <input type="text" name="dealtype">
+
+    <p>Maturity</p>
+      <input type="number" name="maturity">
+
+        <p>Interest rate frequency</p>
+      <input type="text" name="freq">
+
+          <p>Continuous or discrete?</p>
+      <input type="text" name="type_taux">
+
+  <!-- <p>Interest rate frequency</p>
+                  <select name="freq">
+            <option value="b" >Annual</option>
+            <option value="ch">Semestrial</option>
+            <option value="v">Trimestrial</option>
+            </select>
+
+    <p>Continuous or discrete?</p>
+             <select name="type_taux">
+              <option selected value="" disabled selected></option>
+              <option value="b" >Continuous</option>
+              <option value="ch">Discrete</option>
+            </select> -->
+    <br>
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
+  <a href="/dashapp/" class="dash-link">
+    <span>Forward Backtest</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <br>
+</div>
+
+  <a href="/swap/" class="dash-link">
+    <span>Calculate SWAP</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+<br>
+ <!-- <div class="box" style="border: thin solid black">
+  <h6>Upload data for swap optimization</h6>
+    <form method="POST" action="" enctype="multipart/form-data">
+    <br>
+      <p><input type="file" name="file2"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
+  <a href="/swap_optimizer/" class="dash-link">
+    <span>Optimize compound product</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <br>
+</div> -->
+
+<br>
+
+  <a href="/bond/" class="dash-link">
+    <span>Bonds</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+
+</div>
+{% endblock %}
